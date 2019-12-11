@@ -1,0 +1,27 @@
+{
+  "name": "magnet-mouse",
+  "version": "1.0.0",
+  "author": "Devcut <guillaume.egloff@gmail.com>",
+  "license": "UNLICENSED",
+  "browserslist": [
+    ">1%"
+  ],
+  "scripts": {
+    "dev": "gulp sass && gulp typescript",
+    "watch": "gulp watch"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "gulp-uglify": "^3.0.2",
+    "mustache": "^3.1.0",
+    "node-sass": "^4.13.0",
+    "typescript": "^3.7.3"
+  },
+  "dependencies": {
+    "gsap": "^3.0.2"
+  }
+}
