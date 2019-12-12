@@ -7,6 +7,8 @@ var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var tsify = require('tsify');
 var buffer = require('vinyl-buffer');
+var uglify = require('gulp-uglify');
+var rename = require('gulp-rename');
 
 sass.compiler = require('node-sass');
 
@@ -15,6 +17,13 @@ gulp.task('sass', function () {
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(autoprefixer({cascade: false}))
     .pipe(gulp.dest('./public/css'));
+});
+
+gulp.task('minify', function () {
+  return gulp.src('./public/js/*.js')
+    .pipe(uglify())
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest('./public/js'));
 });
 
 gulp.task('typescript', function () {
@@ -38,5 +47,5 @@ gulp.task('typescript', function () {
 
 gulp.task('watch', function () {
   gulp.watch('assets/scss/**/*.scss', gulp.series('sass'));
-  gulp.watch('src/**/*.ts', gulp.series('typescript'));
+  gulp.watch('src/**/*.ts', gulp.series(['typescript', 'minify']));
 });
