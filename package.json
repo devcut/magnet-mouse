@@ -22,7 +22,7 @@
     "gulp-typescript": "^6.0.0-alpha.1",
     "gulp-uglify": "^3.0.2",
     "mustache": "^3.1.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "tsify": "^4.0.1",
     "typescript": "^3.7.3",
     "vinyl-buffer": "^1.0.1",
